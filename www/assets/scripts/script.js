@@ -4,14 +4,14 @@ function register() {
 	//gets input values
 	var memberFirstNameElem = document.getElementById('firstName');
 	var memberLastNameElem = document.getElementById('lastName');
-	var memberEmailElem = document.getElementById('email');
-	var memberPasswordElem = document.getElementById('password');
+	var memEmailE = document.getElementById('email');
+	var memPassE = document.getElementById('password');
 	
 	//sets values to arg vars
 	var memberFirstName = memberFirstNameElem.value;
 	var memberLastName = memberLastNameElem.value;
-	var memberEmail = memberEmailElem.value;
-	var memberPassword = memberPasswordElem.value
+	var memberEmail = memEmailE.value;
+	var memberPassword = memPassE.value
 	
 	//validates form is filled out
 	if (!memberFirstName && !memberLastName) {
@@ -28,25 +28,25 @@ function register() {
 	//Clear Form
 	// memberFirstNameElem.value = "";
 	// memberFirstNameElem.value = "";
-	// memberEmailElem.value = "";
-	// memberPasswordElem.value = "";
+	// memEmailE.value = "";
+	// memPassE.value = "";
 	
 	//Show members on page
 	var membersListElem = document.getElementById('members-list');
 	membersListElem.innerHTML = "";
 	for (var i = 0; i < members.length; i++) {
-		var memberFirstElem = document.createElement('li');
-		memberFirstElem.innerText = "First Name: " + members[i].firstName;
-		membersListElem.appendChild(memberFirstElem);
-		var memberLastElem = document.createElement('li');
-		memberLastElem.innerText = "Last Name: " + members[i].lastName;
-		membersListElem.appendChild(memberLastElem);
-		var memberEmailElem = document.createElement('li');
-		memberEmailElem.innerText = "Email: " + members[i].email;
-		membersListElem.appendChild(memberEmailElem);
-		var memberPasswordElem = document.createElement('li');
-		memberPasswordElem.innerText = "Password: " + members[i].password;
-		membersListElem.appendChild(memberPasswordElem)
+		var memFirstE = document.createElement('li');
+		memFirstE.innerText = "First Name: " + members[i].firstName;
+		membersListElem.appendChild(memFirstE);
+		var memLastE = document.createElement('li');
+		memLastE.innerText = "Last Name: " + members[i].lastName;
+		membersListElem.appendChild(memLastE);
+		var memEmailE = document.createElement('li');
+		memEmailE.innerText = "Email: " + members[i].email;
+		membersListElem.appendChild(memEmailE);
+		var memPassE = document.createElement('li');
+		memPassE.innerText = "Password: " + members[i].password;
+		membersListElem.appendChild(memPassE)
 	}
 	console.log(members)
 }
@@ -54,8 +54,8 @@ function register() {
 //For refactor...
 // function clearForm() {
 // 	register.memberNameElem.value = "";
-// 	register.memberEmailElem.value = "";
-// 	register.memberPasswordElem.value = "";
+// 	register.memEmailE.value = "";
+// 	register.memPassE.value = "";
 // }
 
 function Member(firstName, lastName, email, password) {
