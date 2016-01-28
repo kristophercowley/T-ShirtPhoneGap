@@ -1,63 +1,63 @@
 var members = [];
-function register() {
+// function register() {
 	
-	//gets input values
-	var memberFirstNameElem = document.getElementById('firstName');
-	var memberLastNameElem = document.getElementById('lastName');
-	var memberEmailElem = document.getElementById('email');
-	var memberPasswordElem = document.getElementById('password');
+// 	//gets input values
+// 	// var memberFirstNameElem = document.getElementById('firstName');
+// 	// var memberLastNameElem = document.getElementById('lastName');
+// 	// var memEmailE = document.getElementById('email');
+// 	// var memPassE = document.getElementById('password');
 	
-	//sets values to arg vars
-	var memberFirstName = memberFirstNameElem.value;
-	var memberLastName = memberLastNameElem.value;
-	var memberEmail = memberEmailElem.value;
-	var memberPassword = memberPasswordElem.value
+// 	//sets values to arg vars
+// 	// var memberFirstName = memberFirstNameElem.value;
+// 	// var memberLastName = memberLastNameElem.value;
+// 	// var memberEmail = memEmailE.value;
+// 	// var memberPassword = memPassE.value
 	
-	//validates form is filled out
-	if (!memberFirstName && !memberLastName) {
-		alert("Fill Out the Form!")
-		return
-	}
+// 	//validates form is filled out
+// 	if (!memberFirstName && !memberLastName) {
+// 		alert("Fill Out the Form!")
+// 		return
+// 	}
 	
-	//Creates Member
-	var member = new Member(memberFirstName, memberLastName, memberEmail, memberPassword);
+// 	//Creates Member
+// 	var member = new Member(memberFirstName, memberLastName, memberEmail, memberPassword);
 	
-	//Pushes member to members array
-	members.push(member);
+// 	//Pushes member to members array
+// 	members.push(member);
 	
-	//Clear Form
-	// memberFirstNameElem.value = "";
-	// memberFirstNameElem.value = "";
-	// memberEmailElem.value = "";
-	// memberPasswordElem.value = "";
+// 	//Clear Form
+// 	// memberFirstNameElem.value = "";
+// 	// memberFirstNameElem.value = "";
+// 	// memEmailE.value = "";
+// 	// memPassE.value = "";
 	
-	//Show members on page
-	var membersListElem = document.getElementById('members-list');
-	membersListElem.innerHTML = "";
-	for (var i = 0; i < members.length; i++) {
-		var memberFirstElem = document.createElement('li');
-		memberFirstElem.innerText = "First Name: " + members[i].firstName;
-		membersListElem.appendChild(memberFirstElem);
-		var memberLastElem = document.createElement('li');
-		memberLastElem.innerText = "Last Name: " + members[i].lastName;
-		membersListElem.appendChild(memberLastElem);
-		var memberEmailElem = document.createElement('li');
-		memberEmailElem.innerText = "Email: " + members[i].email;
-		membersListElem.appendChild(memberEmailElem);
-		var memberPasswordElem = document.createElement('li');
-		memberPasswordElem.innerText = "Password: " + members[i].password;
-		membersListElem.appendChild(memberPasswordElem)
-	}
-	console.log(members)
-}
+// 	//Show members on page
+// 	var membersListElem = document.getElementById('members-list');
+// 	membersListElem.innerHTML = "";
+// 	for (var i = 0; i < members.length; i++) {
+// 		var memFirstE = document.createElement('li');
+// 		memFirstE.innerText = "First Name: " + members[i].firstName;
+// 		membersListElem.appendChild(memFirstE);
+// 		var memLastE = document.createElement('li');
+// 		memLastE.innerText = "Last Name: " + members[i].lastName;
+// 		membersListElem.appendChild(memLastE);
+// 		var memEmailE = document.createElement('li');
+// 		memEmailE.innerText = "Email: " + members[i].email;
+// 		membersListElem.appendChild(memEmailE);
+// 		var memPassE = document.createElement('li');
+// 		memPassE.innerText = "Password: " + members[i].password;
+// 		membersListElem.appendChild(memPassE)
+// 	}
+// 	console.log(members)
+// }
 
 //For refactor...
 // function clearForm() {
 // 	register.memberNameElem.value = "";
-// 	register.memberEmailElem.value = "";
-// 	register.memberPasswordElem.value = "";
+// 	register.memEmailE.value = "";
+// 	register.memPassE.value = "";
 // }
-
+	//Members Constructor
 function Member(firstName, lastName, email, password) {
 	this.firstName = firstName;
 	this.lastName = lastName;
@@ -65,6 +65,24 @@ function Member(firstName, lastName, email, password) {
 	this.password = password;
 	//this.hasDiscount = false;
 }
+
+function register(){
+		//Get sign up values
+	var memberFirstNameElem = document.getElementById('firstName');
+	var memberLastNameElem = document.getElementById('lastName');
+	var memEmailE = document.getElementById('email');
+	var memPassE = document.getElementById('password');
+
+		//sets values to arg vars
+	var memberFirstName = memberFirstNameElem.value;
+	var memberLastName = memberLastNameElem.value;
+	var memberEmail = memEmailE.value;
+	var memberPassword = memPassE.value;
+	var temp = new Member(memberFirstName,memberLastName,memberEmail,memberPassword);
+	members.push(temp);
+}	
+
+
 
 //Login Function
 function login() {
